@@ -1,0 +1,64 @@
+@keyframes intro {
+  from {
+    opacity: 0;
+    transform: scale(0.01);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#content {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.box {
+  width: 400px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  animation: intro 0.5s 1 ease-in-out;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.box:hover {
+  box-shadow: 0 0 10px rgb(224, 224, 224);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#content:hover .box:not(:hover) {
+  transform: scale(0.95);
+}
+
+.box .header {
+  text-transform: uppercase;
+  border-bottom: 0.5px solid grey;
+  font-size: 2rem;
+  padding: 0.3rem 1rem;
+  border: none;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 1rem;
+}
+
+/* 
+Klasy dodane na boksie:
+
+highlighted — zmienia kolor tła całego boksa,
+special-header — zmienia kolor headera,
+important — jeśli nie ma tej klasy, boks ma mieć opacity: 0.7;, a jeśli ta klasa jest nadana, ma mieć opacity: 1;. */
+
+.box.highlighted {
+  background: rgba(175, 175, 175, 0.3);
+}
+
+.box.special-header .header {
+  background: rgba(66, 18, 149, 0.096);
+}
+
+.box:not(.important) {
+  opacity: 0.7;
+}
